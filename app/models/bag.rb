@@ -1,0 +1,2 @@
+class Bag < Account
+end
