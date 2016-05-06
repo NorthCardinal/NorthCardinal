@@ -1,2 +1,2 @@
 # NorthCardinal
-North Cardinal Medical Marijuana Inventory System
+NorthCardinal Medical Marijuana Inventory System
