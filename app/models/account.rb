@@ -8,6 +8,10 @@ class Account < ActiveRecord::Base
     [nil, 'Bag', 'Container', 'Plant', 'Waste', 'Seed']
   end
 
+  def self.scan(data)
+    find(Zlib::Inflate.inflate(Base64.decode64(data))[/\d+/])
+  end
+
   def label
     Label.new(label_text, label_data)
   end

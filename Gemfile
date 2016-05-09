@@ -55,3 +55,6 @@ end
 
 # Barcodes
 gem 'barby'
+
+# RMagick
+gem 'rmagick'
