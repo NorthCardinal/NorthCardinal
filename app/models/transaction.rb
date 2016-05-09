@@ -1,4 +1,5 @@
 class Transaction < ActiveRecord::Base
+  
   belongs_to :creditor_account,
     class_name: 'Account',
     foreign_key: 'creditor_account_id'

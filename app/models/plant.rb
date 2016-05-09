@@ -1,2 +1,3 @@
 class Plant < Account
+  
 end

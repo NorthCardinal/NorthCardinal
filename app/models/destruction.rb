@@ -1,0 +1,3 @@
+class Destruction < Transaction
+  
+end
