@@ -9,7 +9,7 @@ class Account < ActiveRecord::Base
   end
 
   def self.scan(data)
-    find(Zlib::Inflate.inflate(Base64.decode64(data))[/\d+/])
+    find(decompress(data)[/\d+/])
   end
 
   def label
@@ -23,7 +23,17 @@ class Account < ActiveRecord::Base
     end
 
     def label_data
-      Base64.encode64(Zlib::Deflate.deflate(label_text))
+      compress label_text
+    end
+
+  private
+
+    def compress(text)
+      Base64.encode64(Zlib::Deflate.deflate(text))
+    end
+
+    def decompress(text)
+      Zlib::Inflate.inflate(Base64.decode64(text))
     end
 
 end
