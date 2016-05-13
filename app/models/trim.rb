@@ -1,0 +1,3 @@
+class Trim < Transaction
+  
+end

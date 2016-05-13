@@ -13,7 +13,7 @@ class Account < ActiveRecord::Base
   end
 
   def label
-    Label.new(label_text, label_data)
+    NorthCardinal::Label.new(label_text, label_data)
   end
 
   protected
