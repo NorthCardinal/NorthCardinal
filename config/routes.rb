@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resource :dashboard, only: [ :show ], controller: :dashboard
+
   resources :transactions
   resources :harvests,      only: [ :new, :create ]
   resources :trims,         only: [ :new, :create ]
