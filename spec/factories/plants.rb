@@ -1,6 +1,6 @@
 FactoryGirl.define do
-  factory :account do
-    name { Account.names.sample }
+  factory :plant do
+    name { 'Plant' }
     description { FFaker::Lorem.sentence(4) }
   end
 end

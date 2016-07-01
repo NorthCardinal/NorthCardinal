@@ -6,13 +6,13 @@ Rails.application.routes.draw do
 
   resource :dashboard, only: [ :show ], controller: :dashboard
 
-  resources :transactions
-  resources :harvests,      only: [ :new, :create ]
-  resources :trims,         only: [ :new, :create ]
-  resources :destructions,  only: [ :new, :create ]
+  # Transactions
+  resources :harvests,      only: [ :index, :show, :new, :create ]
+  resources :trims,         only: [ :index, :show, :new, :create ]
+  resources :destructions,  only: [ :index, :show, :new, :create ]
 
-  resources :accounts
-  resources :plants,        only: [ :new, :create ]
-  resources :containers,    only: [ :new, :create ]
+  # Accounts
+  resources :plants,        only: [ :index, :show, :new, :create ]
+  resources :containers,    only: [ :index, :show, :new, :create ]
 
 end
