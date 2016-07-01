@@ -4,6 +4,14 @@ require 'base64'
 class Account < ActiveRecord::Base
   self.inheritance_column = 'name'
 
+  validates :name,
+    presence: true,
+    allow_blank: false
+
+  validates :description,
+    presence: true,
+    allow_blank: false
+
   def self.names
     [nil, 'Bag', 'Container', 'Plant', 'Waste', 'Seed']
   end
