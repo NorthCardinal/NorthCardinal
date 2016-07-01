@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   resource :dashboard, only: [ :show ], controller: :dashboard
 
   resources :transactions

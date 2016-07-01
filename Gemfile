@@ -61,3 +61,6 @@ gem 'barby'
 
 # RMagick
 gem 'rmagick'
+
+# Devise for authentication
+gem 'devise'
