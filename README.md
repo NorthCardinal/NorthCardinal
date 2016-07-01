@@ -11,11 +11,11 @@ controlled narcotics such as marijuana.
 The ultimate goal is to ease the requirements enforced on growers by Health
 Canada by providing full solution for the growth and sale of medical marijuana.
 
-The project is very recent and is not in its current state a viable solution.
+**The project is very recent and is not in its current state a viable solution.**
 
 ## Contributors
 
-**Contributors are very welcome to join the project.**
+*Contributors are very welcome to join the project.*
 
 * Feakis Suttvead (Founder)
 
