@@ -4,7 +4,7 @@ require 'barby/outputter/rmagick_outputter'
 
 class NorthCardinal::Label
 
-  def initialize(text, data, barcode = Barby::Code128B)
+  def initialize text:, data:, barcode: Barby::Code128B
     @barcode = barcode.new(data)
     @text = text
   end

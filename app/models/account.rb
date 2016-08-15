@@ -2,6 +2,7 @@ require 'zlib'
 require 'base64'
 
 class Account < ActiveRecord::Base
+  self.abstract_class = true
   self.inheritance_column = 'name'
 
   validates :name,
@@ -13,7 +14,7 @@ class Account < ActiveRecord::Base
     allow_blank: false
 
   def self.names
-    [nil, 'Bag', 'Container', 'Plant', 'Waste', 'Seed']
+    ['Bag', 'Container', 'Plant', 'Waste', 'Seed']
   end
 
   def self.scan(data)
@@ -21,18 +22,14 @@ class Account < ActiveRecord::Base
   end
 
   def label
-    NorthCardinal::Label.new(label_text, label_data)
+    NorthCardinal::Label.new(
+      text: self.to_s,
+      data: compress(self.to_s))
   end
 
-  protected
-
-    def label_text
-      "#{name}-#{id}"
-    end
-
-    def label_data
-      compress label_text
-    end
+  def to_s
+    "#{name}-#{id}"
+  end
 
   private
 
